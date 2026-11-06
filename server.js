@@ -27,7 +27,7 @@ const ROOT_DIR = __dirname;
 // (FFX_PASS নামেও কাজ করবে)
 // GitHub সেট না থাকলে ছবি ও সেটিংস লোকাল DATA_DIR এ (না দিলে ./data) সেভ হবে
 // ---------------------------------------------------------------
-const ADMIN_PASSWORD = process.env['FFX-PASS'] || process.env.FFX_PASS || '';
+const ADMIN_PASSWORD = 'sohanbhai'; // সরাসরি কোডে সেট করা — Render এর FFX-PASS লাগবে না
 const DATA_DIR = path.resolve(process.env.DATA_DIR || path.join(ROOT_DIR, 'data'));
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');
 const CONFIG_FILE = path.join(DATA_DIR, 'config.json');
@@ -742,6 +742,5 @@ function serveFile(filePath, res, cache) {
 
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
-  if (!ADMIN_PASSWORD) console.log('⚠️  FFX-PASS সেট করা নেই — /admin লগইন বন্ধ থাকবে');
   console.log(USE_GH ? 'Storage: GitHub (' + (GH_REPO || '?') + ' @ ' + GH_BRANCH + ')' : 'Storage: লোকাল (FFX-G সেট করা নেই)');
 });
