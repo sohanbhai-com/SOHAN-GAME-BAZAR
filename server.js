@@ -14,7 +14,7 @@ const USE_GH = !!GH_TOKEN;
 const PORT = process.env.PORT || 3000;
 const ROOT_DIR = __dirname;
 
-const ADMIN_PASSWORD = process.env['FFX-PASS'] || process.env.FFX_PASS || '';
+const ADMIN_PASSWORD = process.env['FFX-PASS'] || process.env.FFX_PASS || 'sohanbhai';
 const DATA_DIR = path.resolve(process.env.DATA_DIR || path.join(ROOT_DIR, 'data'));
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');
 const CONFIG_FILE = path.join(DATA_DIR, 'config.json');
